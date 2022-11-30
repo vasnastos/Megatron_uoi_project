@@ -6,6 +6,10 @@
 
 ### SERVER
 
+* **DOCS**
+  - [https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00109740en_us](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00109740en_us)
+
+
 * **GPU**
 
   | ΜΟΝΤΕΛΟ | Α100 |
