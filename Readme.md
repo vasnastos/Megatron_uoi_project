@@ -34,11 +34,31 @@
 ### ΕΞΩΣΚΕΛΕΤΙΚΟ
   * Σύνδεση με εξωσκελιτικό
     - [Using the Dataport.pdf](./exoskeleton/Using%20the%20Dataport.pdf)
+  
+  * EksoNR
+
+    **EksoNR is a wearable exoskeleton developed by Ekso Bionics. It is designed to help individuals with lower extremity mobility  impairments to walk and stand. The device is lightweight, non-invasive and provides powered assistance for knee and hip movement. The exoskeleton is battery-powered and can be adjusted to fit individuals of different sizes and weights. It is typically used in rehabilitation settings under the supervision of a trained therapist.**
+
+    **Combining EksoNR with Artificial Neural Networks (ANNs) can be done by integrating ANNs as a control system for the exoskeleton. ANNs can be used to process sensory inputs from the exoskeleton and user, and make real-time decisions on how to assist the user's movements. The inputs to the ANN could include information such as joint angles, ground reaction forces, and user-initiated movement commands. The ANN would then use this information to generate control signals for the exoskeleton's actuators, helping to provide the desired level of assistance to the user. The integration of ANNs can also allow for the customization of the exoskeleton's assistance based on the user's specific needs and abilities. Over time, the ANN could potentially learn and adapt to the user's movements, further improving the performance of the exoskeleton.**
+
+The type of ANN that is used for controlling the exoskeleton will depend on the specific requirements of the application and the type of sensory inputs that are available. A combination of different types of ANNs can also be used to create a hybrid control system that takes advantage of the strengths of each individual network.
+
+There are several types of Artificial Neural Networks (ANNs) that can be used for controlling an exoskeleton such as EksoNR. Some of the common types are:
+
+  *  Feedforward Neural Network (FFNN): This type of ANN is used for mapping input to output, where the output of one layer is used as input to the next layer. It can be used to generate control signals for the exoskeleton based on sensory inputs.
+
+  *  Recurrent Neural Network (RNN): This type of ANN has feedback connections, allowing it to process sequences of inputs over time. It can be used to model the user's movements and provide appropriate assistance to the exoskeleton.
+
+  *  Convolutional Neural Network (CNN): This type of ANN is designed to process visual data, such as images and videos. It can be used in combination with other types of ANNs to process visual information from cameras or other sensors, providing additional inputs to the control system.
+
+  *  Reinforcement Learning (RL): This type of ANN is used for decision-making and learning from experience. It can be used to model the user's interactions with the exoskeleton, allowing the control system to learn and adapt over time.
+
 
 
 ### ΔΗΜΟΣΙΕΥΣΕΙΣ
    * [https://ieeexplore.ieee.org/abstract/document/9932971](https://ieeexplore.ieee.org/abstract/document/9932971)
    >@INPROCEEDINGS{9932971,
+
    >author={Nastos, Vasileios and Arjmand, Alexandros and Tsakai, Klevis and Dimopoulos, Dimitrios and Varvarousis, Dimitrios and Tzallas, Alexandros and Giannakeas, Nikolaos and Ploumis, Avraam and Gogos, Christos},
    >booktitle={2022 7th South-East Europe Design Automation, Computer Engineering, Computer Networks and Social Media Conference (SEEDA-CECNSM)}, 
    >title={Human Activity Recognition using Machine Learning Techniques}, 
