@@ -57,6 +57,8 @@ There are several types of Artificial Neural Networks (ANNs) that can be used fo
 
 ### ΔΗΜΟΣΙΕΥΣΕΙΣ
    * [https://ieeexplore.ieee.org/abstract/document/9932971](https://ieeexplore.ieee.org/abstract/document/9932971)
+  
+  
    >@INPROCEEDINGS{9932971,
 
    >author={Nastos, Vasileios and Arjmand, Alexandros and Tsakai, Klevis and Dimopoulos, Dimitrios and Varvarousis, Dimitrios and Tzallas, Alexandros and Giannakeas, Nikolaos and Ploumis, Avraam and Gogos, Christos},
