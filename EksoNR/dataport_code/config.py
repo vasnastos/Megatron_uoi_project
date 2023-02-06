@@ -1,0 +1,2 @@
+bDataLogging = False
+bExit = False

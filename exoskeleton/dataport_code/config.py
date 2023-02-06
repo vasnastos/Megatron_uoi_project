@@ -1,2 +1,0 @@
-bDataLogging = False
-bExit = False
