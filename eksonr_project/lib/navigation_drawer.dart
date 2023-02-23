@@ -1,6 +1,9 @@
 import 'package:eksonr_project/drawer_item.dart';
-import 'package:eksonr_project/pages/dashboard.dart';
+import 'package:eksonr_project/globals.dart';
 import 'package:flutter/material.dart';
+
+import 'package:eksonr_project/pages/dashboard.dart';
+import 'package:eksonr_project/pages/settings.dart';
 
 class CustomNavigationDrawer extends StatelessWidget {
   const CustomNavigationDrawer({super.key});
@@ -56,8 +59,20 @@ class CustomNavigationDrawer extends StatelessWidget {
 
     switch (index) {
       case 0:
+        if (currentPageIndex != 0) {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const DashboardPage()));
+          currentPageIndex = 0;
+        }
+        break;
+      case 1:
+        if (currentPageIndex != 1) {
+          currentPageIndex = 1;
+        }
+        break;
+      case 2:
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const DashboardPage()));
+            MaterialPageRoute(builder: (context) => const SettingsPage()));
         break;
     }
   }
@@ -76,7 +91,7 @@ class CustomNavigationDrawer extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text('User', style: TextStyle(fontSize: 14, color: Colors.white)),
             SizedBox(
               height: 10,
