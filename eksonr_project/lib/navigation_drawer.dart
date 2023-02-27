@@ -72,7 +72,7 @@ class CustomNavigationDrawer extends StatelessWidget {
         break;
       case 2:
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const SettingsPage()));
+            MaterialPageRoute(builder: (context) => SettingsPage()));
         break;
     }
   }
