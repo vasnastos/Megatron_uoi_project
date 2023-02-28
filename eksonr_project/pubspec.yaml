@@ -38,6 +38,8 @@ dependencies:
   csv: ^5.0.1
   storage_space: ^1.0.1+5
   colorful_background: ^0.0.4
+  syncfusion_flutter_charts: ^20.4.51
+  smooth_page_indicator: ^1.0.1
 
 dev_dependencies:
   flutter_test:

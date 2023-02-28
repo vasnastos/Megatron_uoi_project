@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../background.dart';
 import '../datatable_from_csv.dart';
 import '../navigation_drawer.dart';
 
@@ -15,7 +16,12 @@ class DashboardPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: const Homepage(),
+      body: const Background(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: DatatableFromCSV(),
+        ),
+      ),
     );
   }
 }

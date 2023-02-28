@@ -1,5 +1,6 @@
 import 'package:eksonr_project/drawer_item.dart';
 import 'package:eksonr_project/globals.dart';
+import 'package:eksonr_project/pages/search.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eksonr_project/pages/dashboard.dart';
@@ -67,12 +68,14 @@ class CustomNavigationDrawer extends StatelessWidget {
         break;
       case 1:
         if (currentPageIndex != 1) {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => SearchPage()));
           currentPageIndex = 1;
         }
         break;
       case 2:
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => SettingsPage()));
+            MaterialPageRoute(builder: (context) => const SettingsPage()));
         break;
     }
   }
