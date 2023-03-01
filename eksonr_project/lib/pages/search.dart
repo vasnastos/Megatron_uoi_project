@@ -1,6 +1,7 @@
+import 'package:eksonr_project/helpers/dataset.dart';
 import 'package:flutter/material.dart';
 
-import '../background.dart';
+import '../widgets/background.dart';
 import '../navigation_drawer.dart';
 
 class SearchPage extends StatelessWidget {
@@ -16,7 +17,20 @@ class SearchPage extends StatelessWidget {
   final rhipy = TextEditingController();
   final lhipx = TextEditingController();
   final lhipy = TextEditingController();
-
+// y axis:
+// X axis: pitch
+  late Dataset ds = Dataset(
+    pitch: pitch.text,
+    roll: roll.text,
+    rtoe: rtoe.text,
+    rheel: rheel.text,
+    ltoe: ltoe.text,
+    lheel: lheel.text,
+    rhipx: rhipx.text,
+    rhipy: rhipy.text,
+    lhipx: lhipx.text,
+    lhipy: lhipy.text,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +47,19 @@ class SearchPage extends StatelessWidget {
         child: FittedBox(
           child: FloatingActionButton.extended(
             onPressed: () {
+              // Set dataset class values
+              ds = Dataset(
+                pitch: pitch.text,
+                roll: roll.text,
+                rtoe: rtoe.text,
+                rheel: rheel.text,
+                ltoe: ltoe.text,
+                lheel: lheel.text,
+                rhipx: rhipx.text,
+                rhipy: rhipy.text,
+                lhipx: lhipx.text,
+                lhipy: lhipy.text,
+              );
               showDialog(
                 context: context,
                 builder: (context) {
@@ -48,7 +75,9 @@ class SearchPage extends StatelessWidget {
                             "DATASET\n",
                           ),
                           Text(
-                              "Pitch: ${pitch.text}\nRoll: ${roll.text}\nRToe: ${rtoe.text}\nRheel: ${rheel.text}\nLToe: ${ltoe.text}\nLHeel: ${lheel.text}\nRHipX: ${rhipx.text}\nRHipY: ${rhipy.text}\nLHipX: ${lhipx.text}\nLHipY: ${lhipy.text}"),
+                            ds.printData(),
+                            //"Pitch: ${pitch.text}\nRoll: ${roll.text}\nRToe: ${rtoe.text}\nRheel: ${rheel.text}\nLToe: ${ltoe.text}\nLHeel: ${lheel.text}\nRHipX: ${rhipx.text}\nRHipY: ${rhipy.text}\nLHipX: ${lhipx.text}\nLHipY: ${lhipy.text}"
+                          ),
                         ],
                       ),
                     ),
@@ -72,7 +101,7 @@ class SearchPage extends StatelessWidget {
               margin: const EdgeInsets.all(50),
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color.fromARGB(175, 255, 255, 255),
                 border: Border.all(color: Colors.black, width: 3),
               ),
               child: Column(

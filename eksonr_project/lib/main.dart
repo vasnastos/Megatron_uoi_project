@@ -1,4 +1,4 @@
-import 'package:eksonr_project/background.dart';
+import 'package:eksonr_project/widgets/background.dart';
 import 'package:flutter/material.dart';
 import 'package:eksonr_project/navigation_drawer.dart';
 import 'package:flutter/services.dart';

@@ -40,6 +40,8 @@ dependencies:
   colorful_background: ^0.0.4
   syncfusion_flutter_charts: ^20.4.51
   smooth_page_indicator: ^1.0.1
+  http: ^0.13.5
+  syncfusion_flutter_datagrid: ^20.4.52
 
 dev_dependencies:
   flutter_test:

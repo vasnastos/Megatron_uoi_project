@@ -1,5 +1,5 @@
-import 'package:eksonr_project/drawer_item.dart';
-import 'package:eksonr_project/globals.dart';
+import 'package:eksonr_project/helpers/drawer_item.dart';
+import 'package:eksonr_project/helpers/globals.dart';
 import 'package:eksonr_project/pages/search.dart';
 import 'package:flutter/material.dart';
 
