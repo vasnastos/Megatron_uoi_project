@@ -12,7 +12,10 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       drawer: const CustomNavigationDrawer(),
       appBar: AppBar(
-        title: const Text("EksoNR App"),
+        title: Image.asset(
+          "assets/megatron_logo_50.png",
+          fit: BoxFit.cover,
+        ),
         centerTitle: true,
         backgroundColor: Colors.black,
       ),

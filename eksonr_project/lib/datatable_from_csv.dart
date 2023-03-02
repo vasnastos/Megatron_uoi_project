@@ -1,3 +1,4 @@
+import 'package:eksonr_project/helpers/globals.dart';
 import 'package:eksonr_project/widgets/datatable_container.dart';
 import 'package:eksonr_project/widgets/diagram_container.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,11 @@ class _DatatableFromCSV extends State<DatatableFromCSV> {
     var result = await DefaultAssetBundle.of(context).loadString(
       "assets/data.csv",
     );
-    return const CsvToListConverter().convert(result, eol: "\n");
+    return const CsvToListConverter().convert(
+      result,
+      eol: "\n",
+      shouldParseNumbers: false,
+    );
   }
 
   @override
@@ -31,16 +36,21 @@ class _DatatableFromCSV extends State<DatatableFromCSV> {
 
   Future refresh() async {
     csvData = await processCsv();
+    for (var i = 1; i < csvData!.length; i++) {
+      ToeData rightToeData = ToeData(i, double.parse(csvData![i][3]));
+      rightToeDatas.add(rightToeData);
+
+      ToeData leftToeData = ToeData(i, double.parse(csvData![i][5]));
+      leftToeDatas.add(leftToeData);
+
+      HeelData rightHeelData = HeelData(i, double.parse(csvData![i][3]));
+      rightHeelDatas.add(rightHeelData);
+
+      HeelData leftHeelData = HeelData(i, double.parse(csvData![i][5]));
+      leftHeelDatas.add(leftHeelData);
+    }
     setState(() {});
   }
-
-  List<SalesData> data = [
-    SalesData('Jan', 35),
-    SalesData('Feb', 28),
-    SalesData('Mar', 34),
-    SalesData('Apr', 32),
-    SalesData('May', 40)
-  ];
 
   final _controller = PageController();
 
@@ -56,7 +66,6 @@ class _DatatableFromCSV extends State<DatatableFromCSV> {
         ),
         DiagramContainer(
           controller: _controller,
-          data: data,
         ),
         SmoothPageIndicator(
           controller: _controller, // PageController

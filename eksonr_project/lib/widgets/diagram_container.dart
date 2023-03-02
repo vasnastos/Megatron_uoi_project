@@ -1,13 +1,12 @@
+import 'package:eksonr_project/helpers/globals.dart';
 import 'package:eksonr_project/helpers/sales_data.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class DiagramContainer extends StatelessWidget {
-  const DiagramContainer(
-      {super.key, required this.controller, required this.data});
+  const DiagramContainer({super.key, required this.controller});
 
   final controller;
-  final data;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class DiagramContainer extends StatelessWidget {
       width: double.infinity,
       alignment: Alignment.center,
       margin: const EdgeInsets.all(50),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black, width: 3),
@@ -33,20 +32,16 @@ class DiagramContainer extends StatelessWidget {
               ),
             ),
             legend: Legend(isVisible: true),
-            series: <LineSeries<HeelData, double>>[
-              LineSeries<HeelData, double>(
-                dataSource: [
-                  HeelData(2, 1),
-                  HeelData(2, 2),
-                  HeelData(2, 3),
-                  HeelData(2, 4),
-                  HeelData(2, 5),
-                  HeelData(2, 6),
-                  HeelData(2, 7),
-                  HeelData(2, 8),
-                ],
-                xValueMapper: (HeelData heel, _) => heel.heel,
-                yValueMapper: (HeelData heel, _) => heel.index,
+            tooltipBehavior: TooltipBehavior(
+              enable: true,
+              activationMode: ActivationMode.longPress,
+            ),
+            zoomPanBehavior: ZoomPanBehavior(enablePinching: true),
+            series: <LineSeries<ToeData, int>>[
+              LineSeries<ToeData, int>(
+                dataSource: rightToeDatas,
+                xValueMapper: (ToeData rtoe, _) => rtoe.index,
+                yValueMapper: (ToeData rtoe, _) => rtoe.toe,
                 name: "Right Toe",
                 width: 5,
                 animationDuration: 3000,
@@ -58,22 +53,13 @@ class DiagramContainer extends StatelessWidget {
                   shape: DataMarkerType.diamond,
                 ),
                 dataLabelSettings: const DataLabelSettings(
-                  isVisible: true,
+                  isVisible: false,
                 ),
               ),
-              LineSeries<HeelData, double>(
-                dataSource: [
-                  HeelData(1, 1),
-                  HeelData(1, 2),
-                  HeelData(1, 3),
-                  HeelData(1, 4),
-                  HeelData(1, 5),
-                  HeelData(1, 6),
-                  HeelData(1, 7),
-                  HeelData(1, 8),
-                ],
-                xValueMapper: (HeelData heel, _) => heel.heel,
-                yValueMapper: (HeelData heel, _) => heel.index,
+              LineSeries<ToeData, int>(
+                dataSource: leftToeDatas,
+                xValueMapper: (ToeData ltoe, _) => ltoe.index,
+                yValueMapper: (ToeData ltoe, _) => ltoe.toe,
                 name: "Left Toe",
                 width: 5,
                 animationDuration: 3000,
@@ -85,7 +71,7 @@ class DiagramContainer extends StatelessWidget {
                   shape: DataMarkerType.diamond,
                 ),
                 dataLabelSettings: const DataLabelSettings(
-                  isVisible: true,
+                  isVisible: false,
                 ),
               )
             ],
@@ -99,20 +85,16 @@ class DiagramContainer extends StatelessWidget {
               ),
             ),
             legend: Legend(isVisible: true),
-            series: <LineSeries<HeelData, double>>[
-              LineSeries<HeelData, double>(
-                dataSource: [
-                  HeelData(16, 1),
-                  HeelData(19, 2),
-                  HeelData(18, 3),
-                  HeelData(15, 4),
-                  HeelData(16, 5),
-                  HeelData(16, 6),
-                  HeelData(13, 7),
-                  HeelData(18, 8),
-                ],
-                xValueMapper: (HeelData heel, _) => heel.heel,
-                yValueMapper: (HeelData heel, _) => heel.index,
+            tooltipBehavior: TooltipBehavior(
+              enable: true,
+              activationMode: ActivationMode.longPress,
+            ),
+            zoomPanBehavior: ZoomPanBehavior(enablePinching: true),
+            series: <LineSeries<HeelData, int>>[
+              LineSeries<HeelData, int>(
+                dataSource: rightHeelDatas,
+                xValueMapper: (HeelData heel, _) => heel.index,
+                yValueMapper: (HeelData heel, _) => heel.heel,
                 name: "Right Heel",
                 width: 5,
                 animationDuration: 3000,
@@ -124,22 +106,13 @@ class DiagramContainer extends StatelessWidget {
                   shape: DataMarkerType.diamond,
                 ),
                 dataLabelSettings: const DataLabelSettings(
-                  isVisible: true,
+                  isVisible: false,
                 ),
               ),
-              LineSeries<HeelData, double>(
-                dataSource: [
-                  HeelData(9, 1),
-                  HeelData(17, 2),
-                  HeelData(9, 3),
-                  HeelData(10, 4),
-                  HeelData(14, 5),
-                  HeelData(14, 6),
-                  HeelData(14, 7),
-                  HeelData(12, 8),
-                ],
-                xValueMapper: (HeelData heel, _) => heel.heel,
-                yValueMapper: (HeelData heel, _) => heel.index,
+              LineSeries<HeelData, int>(
+                dataSource: leftHeelDatas,
+                xValueMapper: (HeelData heel, _) => heel.index,
+                yValueMapper: (HeelData heel, _) => heel.heel,
                 name: "Left Heel",
                 width: 5,
                 animationDuration: 3000,
@@ -151,7 +124,7 @@ class DiagramContainer extends StatelessWidget {
                   shape: DataMarkerType.diamond,
                 ),
                 dataLabelSettings: const DataLabelSettings(
-                  isVisible: true,
+                  isVisible: false,
                 ),
               )
             ],

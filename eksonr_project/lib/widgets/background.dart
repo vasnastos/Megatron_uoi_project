@@ -11,11 +11,11 @@ class Background extends StatelessWidget {
     return ColorfulBackground(
       duration: const Duration(milliseconds: 5000),
       backgroundColors: const [
-        Color(0xFF3e204f),
-        Color(0xFF5a4565),
-        Color(0xFFcec9d6),
-        Color(0xFFe2dbe9),
-        Color(0xFFbcaecc),
+        Color(0xFF2E2B2B),
+        Color(0xFF388186),
+        Color.fromARGB(255, 56, 134, 114),
+        Color(0xFFA5E9E1),
+        Color(0xFFFDF6F6),
       ],
       child: child,
     );
