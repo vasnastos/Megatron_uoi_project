@@ -1,0 +1,11 @@
+LSTM stands for Long Short-Term Memory, and it is a type of recurrent neural network (RNN) architecture.
+Traditional RNNs suffer from the vanishing gradient problem, where the gradient signal decays exponentially as it is backpropagated through time, 
+making it difficult for the model to learn long-term dependencies. LSTMs were designed to overcome this problem by introducing a memory cell that can selectively remember 
+or forget information over time, allowing the model to retain information over long time periods.The memory cell in an LSTM is composed of three gates:
+     the input gate,
+     the output gate,
+     and the forget gate. 
+The input gate controls how much new information is added to the memory cell, 
+the forget gate controls how much old information is discarded from the memory cell, and the output gate controls 
+how much information is output from the memory cell to the next layer.LSTMs have been successfully applied to a wide range of tasks 
+that involve sequential or time-series data, such as speech recognition, language modeling, machine translation, and more.
