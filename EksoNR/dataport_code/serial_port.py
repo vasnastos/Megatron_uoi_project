@@ -146,7 +146,6 @@ def get_crc(data):
 
 # returns the elapsed milliseconds since the specified time
 def millis(start_time):
-   dt = datetime.now() - start_time
-   ms = (dt.days * 24 * 60 * 60 + dt.seconds) * 1000 + dt.microseconds / 1000.0
-   return ms
+   duration = datetime.now() - start_time
+   return int(duration.total_seconds()*1000)
     
